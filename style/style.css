@@ -1,0 +1,286 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {   
+    scroll-behavior: smooth;
+}
+.index{
+    height: 600vh;
+}
+
+.background {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('./background3.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    z-index: -2;
+    
+    transform: scale(4); 
+    transition: transform 0.3s ease-in-out;
+}
+.cover{
+    background-image: url('./overlay1.png');
+    position: fixed;
+    top: 0;
+    width: 130%;
+    height: 100%;  
+    background-image: url('./overlay1.png');
+    background-repeat: no-repeat;
+    background-size: cover;  
+    background-position: center;
+    mix-blend-mode: soft-light;
+    z-index: -1;
+    pointer-events: none;
+}
+
+
+
+.words{
+    color: rgb(255, 255, 255);
+    position: relative;
+    z-index: 99;
+    text-align: center;
+    padding-top: 30vh;
+    /* padding-bottom: 70vh; */
+    font-size: 5rem;
+    word-spacing: .2rem;
+    letter-spacing: .1rem;
+    font-family: "Roboto Condensed", serif;
+}
+
+.words p{
+    font-size: 1.8rem;
+}
+
+.words h1{
+    font-size: 210px;
+}
+
+        .hover-container {
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            height: 100vh;  
+            position: relative;
+        }
+
+        .hover-text {
+            position: relative;
+            transition: all 0.3s ease-in-out;
+            text-align: center;
+        }
+
+        .hover-text::after {
+            content: "Flash Cards for Important Concepts in Chapter 12"; 
+
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            left: 50%;
+            top: -100px;
+            opacity: 0;
+            transform: translateX(-50%);
+            transition: opacity 0.3s ease-in-out;
+
+            color: rgb(181, 181, 181);
+            padding: 230px 100px;
+            border-radius: 30px;
+            box-shadow: 0px 0px 30px 1px rgba(255, 255, 255, 0.383);
+            font-size: 24px;
+            font-weight: normal;
+            letter-spacing: .06rem;
+            word-spacing: -.06rem;
+            white-space: nowrap; 
+        }
+
+        .hover-text:hover::after {
+            opacity: 1;
+        }
+
+        .hover-text:hover {
+            color: transparent; 
+        }
+
+
+
+
+
+
+.button{
+    display: inline-flex;
+    text-decoration: none;
+    z-index: 100;
+    font-size: 20px;
+    margin: 10vh;
+    padding: .3em;
+    border-radius: 30px;
+    color: rgb(255, 0, 221);
+    outline: solid 2px rgb(255, 0, 221);
+    align-items: center;  
+    justify-content: center; 
+    position: relative;
+}
+
+    .button:hover{
+        border-bottom: 10px solid rgb(255, 0, 221);
+        /* background-color: rgb(255, 0, 221); */
+        color: rgb(255, 255, 255);
+        border-radius: 50px;
+        transition: all 0.3s ease-in-out;
+    }
+
+
+.Vocab {  
+    text-decoration: underline;  
+    display: block;
+    color: rgba(255, 255, 255, 0.394);
+    font-weight: 600;
+    font-size: 6rem;
+    padding-top: 40vh;
+}
+    .Vocab:hover{
+        color: rgb(255, 255, 255);
+        font-size: 6.5rem;
+        text-decoration: none;
+        transition: 0.5s ease-in-out;
+    }
+
+#NB {
+    margin-bottom: 20vh;
+}
+
+
+
+/* --------------------------------------------------- */
+
+
+
+
+.flashcards {
+    margin-top: 10vh;
+    font-family: "Roboto Condensed", serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    background-color: #000000;
+}
+
+.card-container {
+    perspective: 1000px; 
+
+    animation: blurEffect 1s ease-in-out forwards;
+    transition: filter 0.5s ease-in-out;
+    animation-delay: 4s; 
+}
+
+@keyframes blurEffect {
+    0% {
+        filter: blur(0px);
+    }
+    100% {
+        filter: blur(10px); /* Adjust blur intensity */
+    }
+}
+
+.clear-blur {
+    filter: blur(0px);
+    animation: none; 
+}
+
+
+
+.card {
+    width: 800px;
+    height: 600px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+    
+    word-spacing: .08rem;
+    letter-spacing: .08rem;
+    line-height: 1.9rem;
+}
+
+.NB {
+    width: 800px;
+    height: 850px;
+}
+
+.card:hover {
+    transform: rotateY(180deg);
+    transition: 0.5s ease-in-out;
+}
+
+.card-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    border-radius: 40px;
+    box-shadow: 0px 0px 30px 1px rgba(255, 255, 255, 0.383);
+    flex-direction: column;
+}
+
+.front {
+    color: white;
+}
+
+.back {
+    width: auto;
+    height: 100%;
+    padding:10vh 8vh 10vh 12vh;
+    color: white;
+    transform: rotateY(180deg); 
+}
+
+ul {
+    padding-left: 50px;
+}
+
+.CS {
+    padding: 17vh;
+    letter-spacing: .1rem;
+}
+
+/* ------------------------------------ */
+
+@media screen and (max-width: 1024px) {
+    .words {
+        font-size: 50%;
+        color: rgb(0, 60, 255);
+    }
+    .a {
+        font-size: 20px;
+    }
+    .button{
+        color: rgb(0, 145, 19);
+        background-color: yellowgreen;
+        z-index: 99;
+    }
+    .cover {
+        mix-blend-mode: difference;
+    }
+
+    .flashcards{
+        background-image: url('./overlay1.png');
+    }
+    .card-face{
+        background-color: rgba(255, 255, 255, 0.084);
+    }
+
+  }

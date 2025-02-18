@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atoms</title>
+
+    <link rel="stylesheet" type="text/css" href="../style/style.css">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  </head>
+
+  <body class="flashcards">
+    <div class="card-container" id="blurElement">
+        <div class="card">
+            <div class="card-face front">Rutherford’s Atomic Model</div>
+            <div class="card-face back">In Rutherford’s model, most of the mass of the atom and all its positive charge are concentrated in a tiny nucleus (typically one by ten thousand the size of an atom), and <br>the electrons revolve around it. </div>
+        </div>
+    </div>
+    
+    <a href="../index.html#RAM" class="button">back</a>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+   let element = document.getElementById("blurElement");
+
+   document.addEventListener("click", function () {
+       if (!element.classList.contains("clear-blur")) {
+           // Remove blur
+           element.classList.add("clear-blur");
+           element.style.filter = "blur(0px)";
+           element.style.animation = "none"; // Stop animation
+
+           // Reapply blur after 3 seconds
+           setTimeout(() => {
+               element.classList.remove("clear-blur");
+               element.style.filter = "blur(10px)";
+               element.style.animation = "blurEffect 1s ease-in-out forwards";
+           }, 3000);
+       }
+   });
+});
+ </script>
+    
+  </body>
+  </html>

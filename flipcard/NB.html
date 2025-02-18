@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atoms</title>
+
+    <link rel="stylesheet" type="text/css" href="../style/style.css">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  </head>
+
+  
+
+  <body class="flashcards">
+
+
+    <div class="card-container" id="blurElement">
+        <div class="card NB">
+            <div class="card-face front">Niel’s Bohr Hydrogenic Atoms Model</div>
+            <div class="card-face back"><p>To explain the line spectra emitted by atoms, as well as <br>the stability of atoms, Niel’s Bohr proposed a model for hydrogenic (single elctron) atoms. He introduced three postulates and laid the foundations of quantum mechanics: </p><br>
+                <ul>
+                <li>(a) In a hydrogen atom, an electron revolves in <br>certain stable orbits (called stationary orbits) <br>without the emission of radiant energy. </li><br>
+                <li>(b) The stationary orbits are those for which the angular momentum is some integral multiple of <br>h/2p. (Bohr’s quantisation condition.) That is <br>L = nh/2p, where n is an integer called the <br>principal quantum number.</li> <br>
+                <li>(c) The third postulate states that an electron might make a transition from one of its specified non-radiating orbits to another of lower energy. When it does so, a photon is emitted having energy equal to the energy difference between the initial and final states. The frequency "n" of the emitted photon is then given by hn = Ei – Ef An atom absorbs radiation of the same frequency the atom emits, in which case the electron is transferred to an orbit with a higher value of n. Ei + hn = Ef.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <a href="../index.html#NB" class="button">back</a>
+
+    <script>
+         document.addEventListener("DOMContentLoaded", function () {
+      let element = document.getElementById("blurElement");
+  
+      document.addEventListener("click", function () {
+          if (!element.classList.contains("clear-blur")) {
+              // Remove blur
+              element.classList.add("clear-blur");
+              element.style.filter = "blur(0px)";
+              element.style.animation = "none"; // Stop animation
+  
+              // Reapply blur after 3 seconds
+              setTimeout(() => {
+                  element.classList.remove("clear-blur");
+                  element.style.filter = "blur(10px)";
+                  element.style.animation = "blurEffect 1s ease-in-out forwards";
+              }, 3000);
+          }
+      });
+  });
+    </script>
+    
+  </body>
+  </html>
