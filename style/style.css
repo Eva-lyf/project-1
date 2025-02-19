@@ -189,7 +189,7 @@ body {
         filter: blur(0px);
     }
     100% {
-        filter: blur(10px); /* Adjust blur intensity */
+        filter: blur(10px); 
     }
 }
 
