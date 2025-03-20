@@ -6,9 +6,10 @@
 
 body {   
     scroll-behavior: smooth;
+    font-family: "Roboto Condensed", serif;
 }
 .index{
-    height: 600vh;
+    height: auto;
 }
 
 .background {
@@ -22,7 +23,7 @@ body {
     background-position: center;
     z-index: -2;
     
-    transform: scale(4); 
+    transform: scale(1); 
     transition: transform 0.3s ease-in-out;
 }
 .cover{
@@ -35,34 +36,128 @@ body {
     background-repeat: no-repeat;
     background-size: cover;  
     background-position: center;
-    mix-blend-mode: soft-light;
+    mix-blend-mode: color-burn ;
     z-index: -1;
     pointer-events: none;
 }
 
+.dropdown{
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+    .dropbtn{
+        background-image: url('./menue.png');
+        width: 30px;
+        height: 30px;
+        left:0;
+        background-size: cover;
+        background-color: transparent;
+        margin: 20px;
+        border: none;
+        cursor: pointer;
+    }
+    .dropdown ul{
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        left: 0;
+        padding-left: 10px;
 
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.5s ease, visibility 0.3s ease;
+    }
+    .dropdown a {
+        margin: 2px;
+        width: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: left;
+        text-decoration: none;
+        color: rgb(255, 255, 255);
+        line-height: 30px;
+        padding-left: 8px;
+        /* outline: orange solid 2px; */
+    }
+    .dropdown a:hover {
+        background-color: rgba(135, 135, 135, 0.347);
+        border-radius: 10px;
+    }
+    
+    .dropbtn:hover + ul, .dropdown ul:hover {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* ---------------------------------------------- */
 
 .words{
     color: rgb(255, 255, 255);
     position: relative;
     z-index: 99;
     text-align: center;
-    padding-top: 30vh;
+    padding-top: 11vh;
     /* padding-bottom: 70vh; */
     font-size: 5rem;
-    word-spacing: .2rem;
+    /* word-spacing: .1rem; */
     letter-spacing: .1rem;
     font-family: "Roboto Condensed", serif;
 }
 
-.words p{
+.chapter12{
     font-size: 1.8rem;
 }
 
 .words h1{
     font-size: 210px;
 }
+.takethequiz{
+    font-size: 5rem;
+    margin-top: 10vh;
+}
+.content{
+    margin-top: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    color: rgb(255, 255, 255);
+    flex-direction: column;
+}
+.block{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: rgb(68, 68, 68) solid 2px;
+    border-radius: 30px;
+    margin-top: 4rem;
+    padding: 2rem;
+    width: 85vw;
+}
+.title{
+    display: flex;
+    width: 50vw;
+    justify-content: left;
+    align-items: center;
+    text-align: left;
+    font-size: 2rem;
+    word-spacing: .1rem;
+    /* outline: springgreen solid 2px; */
+    margin: 2rem;
+}
+p{
+    margin-top: 1rem;
+    display: flex;
+    width: 40vw;
+    justify-content: left;
+    align-items: center;
+    text-align: left;
+    font-size: 1rem;
+    word-spacing: .1rem;
+}
 
+/* 
         .hover-container {
             display: flex; 
             justify-content: center; 
@@ -108,10 +203,7 @@ body {
 
         .hover-text:hover {
             color: transparent; 
-        }
-
-
-
+        } */
 
 
 
@@ -119,15 +211,17 @@ body {
     display: inline-flex;
     text-decoration: none;
     z-index: 100;
-    font-size: 20px;
+    font-size: 16px;
     margin: 10vh;
-    padding: .3em;
+    /* margin-bottom: 40vh; */
+    padding: .5em;
     border-radius: 30px;
     color: rgb(255, 0, 221);
     outline: solid 2px rgb(255, 0, 221);
     align-items: center;  
     justify-content: center; 
     position: relative;
+    word-spacing: .05rem;
 }
 
     .button:hover{
@@ -144,12 +238,12 @@ body {
     display: block;
     color: rgba(255, 255, 255, 0.394);
     font-weight: 600;
-    font-size: 6rem;
+    font-size: 5rem;
     padding-top: 40vh;
 }
     .Vocab:hover{
         color: rgb(255, 255, 255);
-        font-size: 6.5rem;
+        font-size: 5.5rem;
         text-decoration: none;
         transition: 0.5s ease-in-out;
     }
@@ -261,7 +355,7 @@ ul {
 
 @media screen and (max-width: 1024px) {
     .words {
-        font-size: 50%;
+        font-size: 100%;
         color: rgb(0, 60, 255);
     }
     .a {
