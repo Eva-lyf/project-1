@@ -8,7 +8,7 @@ body {
     scroll-behavior: smooth;
     font-family: "neue-haas-unica", sans-serif;
     letter-spacing: .06rem;
-    line-height: 1.25rem;
+    /* line-height: 1.25rem; */
 }
 .index{
     height: auto;
